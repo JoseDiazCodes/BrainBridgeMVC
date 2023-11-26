@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Questions</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+		/>
+		<link rel="stylesheet" href="/css/questions.css" />
+	</head>
+	<body>
+		<div class="app">
+			<div class="sidebar">
+				<div class="user">
+					<div class="user-name">
+						<p><strong>User Name</strong>: <%= user.userName %></p>
+					</div>
+					<div class="user-mail">
+						<p><strong>Email</strong>: <%= user.email %></p>
+					</div>
+				</div>
+				<div class="sidebar-menu">
+					<a href="/profile" class="sidebar-menu__link active"
+						>Create Your Questions</a
+					>
+					<a href="/dashboard/questions" class="sidebar-menu__link"
+						>Repository of All Questions</a
+					>
+
+					<a href="/quiz/quiz" class="sidebar-menu__link">Quiz</a>
+				</div>
+				<label class="toggle">
+					<input type="checkbox" />
+					<span class="slider"></span>
+				</label>
+			</div>
+			<div class="main">
+				<div class="main-header">
+					<div class="main-header__title">Dashboard</div>
+					<div class="main-header__avatars"></div>
+				</div>
+				<div class="main-header-nav">
+					<a href="/logout" class="nav-item">Logout</a>
+				</div>
+				<div class="main-content">
+					<div class="main-content">
+						<div class="content-box">
+							<h2 class="content-heading">
+								List of All The Questions Generated Thus Far:
+							</h2>
+							<div id="questionsContainer">
+								<ul class="questionsAnswers">
+									<% questionAnswer.forEach(function(qa) { %>
+									<li class="text-item">
+										<strong>Text:</strong> <%= qa.text %>
+									</li>
+									<% qa.questionAnswer.forEach(function(item) { %>
+									<li class="qa-item">
+										<strong>Question:</strong> <%= item.question %>
+										<strong>Answer:</strong> <%= item.answer %>
+									</li>
+									<% }) %> <% }) %>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- partial -->
+		<!-- <script src="/js/logic.js"></script> -->
+		<script src="/js/profile-script.js"></script>
+	</body>
+</html>

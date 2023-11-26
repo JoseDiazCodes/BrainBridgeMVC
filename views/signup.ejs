@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>BrainBridge SignUp</title>
+		<link
+			rel="stylesheet"
+			href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"
+		/>
+		<link rel="stylesheet" href="css/log.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="login-box">
+				<h1>Signup</h1>
+				<% if (locals.messages.errors) { %> <% messages.errors.forEach(el => {
+				%>
+				<div class="alert alert-danger"><%= el.msg %></div>
+				<% }) %> <% } %> <% if (locals.messages.info) { %> <%
+				messages.info.forEach(el => { %>
+				<div class="alert alert-info"><%= el.msg %></div>
+				<% }) %> <% } %>
+				<form action="/signup" method="POST" class="login-form">
+					<div class="form-group">
+						<label for="userName" class="form-label">User Name</label>
+						<input
+							type="text"
+							class="form-input"
+							id="userName"
+							name="userName"
+						/>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputEmail1" class="form-label"
+							>Email address</label
+						>
+						<input
+							type="email"
+							class="form-input"
+							id="exampleInputEmail1"
+							name="email"
+						/>
+					</div>
+					<div class="form-group">
+						<label for="password" class="form-label">Password</label>
+						<input
+							type="password"
+							class="form-input"
+							id="password"
+							name="password"
+						/>
+					</div>
+					<div class="form-group">
+						<label for="confirmPassword" class="form-label"
+							>Confirm Password</label
+						>
+						<input
+							type="password"
+							class="form-input"
+							id="confirmPassword"
+							name="confirmPassword"
+						/>
+					</div>
+					<button type="submit" class="btn-login">Submit</button>
+				</form>
+			</div>
+		</div>
+		<script src="js/login-script.js"></script>
+	</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Main Page</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+		/>
+		<link rel="stylesheet" href="css/profile.css" />
+	</head>
+	<body>
+		<div class="app">
+			<div class="sidebar">
+				<div class="user">
+					<img
+						src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2360&q=80"
+						alt="user photo"
+						class="user-photo"
+					/>
+					<div class="user-name">
+						<p><strong>User Name</strong>: <%= user.userName %></p>
+					</div>
+					<div class="user-mail">
+						<p><strong>Email</strong>: <%= user.email %></p>
+					</div>
+				</div>
+				<div class="sidebar-menu">
+					<a href="/profile" class="sidebar-menu__link active"
+						>Create Your Questions</a
+					>
+					<a href="/dashboard/questions/" class="sidebar-menu__link"
+						>Questions</a
+					>
+					<a href="/quiz/quiz" class="sidebar-menu__link">Quiz</a>
+				</div>
+				<label class="toggle">
+					<input type="checkbox" />
+					<span class="slider"></span>
+				</label>
+			</div>
+			<div class="main">
+				<div class="main-header">
+					<div class="main-header__title">Dashboard</div>
+					<div class="main-header__avatars"></div>
+				</div>
+				<div class="main-header-nav">
+					<!-- <a href="#" class="nav-item active">Questions</a> -->
+					<!-- <a href="#" class="nav-item">Quiz</a> -->
+					<a href="/logout" class="nav-item">Logout</a>
+					<!-- <a href="#" class="nav-item">Music</a>
+					<a href="#" class="nav-item">To-do list</a> -->
+				</div>
+				<div class="main-content">
+					<div class="main-content">
+						<div class="content-box">
+							<h2 class="content-heading">
+								Insert Your Text Here and Get Instant Spaced Repetition
+								Questions
+							</h2>
+							<form
+								action="/dashboard/generateQuestions/<%= user.id %>"
+								method="POST"
+								id="textForm"
+							>
+								<textarea
+									class="content-textarea"
+									placeholder="Type your text here..."
+									name="userText"
+								></textarea>
+								<button type="submit">Submit</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- partial -->
+		<script src="js/formValidation.js"></script>
+		<!-- <script src="js/logic.js"></script> -->
+		<script src="js/profile-script.js"></script>
+	</body>
+</html>
