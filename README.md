@@ -190,4 +190,3 @@ _An initiative to bridge the educational gap_
 ## Credit
 
 Modified from Scotch.io's auth tutorial
-# BrainBridgeMVC
