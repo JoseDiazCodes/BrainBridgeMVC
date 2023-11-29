@@ -36,15 +36,8 @@ _An initiative to bridge the educational gap_
   - [Custom GPT Integration](#custom-gpt-integration)
   - [Future Enhancements](#future-enhancements)
   - [Empowering Learning How to Learn](#empowering-learning-how-to-learn)
-- [BrainBridge Wireframe](#brainbridge-wireframe)
-  - [Login Page](#login-page)
-  - [Sign Up Page](#sign-up-page)
-  - [Home Page](#home-page)
-  - [Excerpt Input Page](#excerpt-input-page)
-  - [Study Session Page](#study-session-page)
-  - [Progress Page](#progress-page)
   - [Conclusion and Commitment to Education](#conclusion-and-commitment-to-education)
-  - [Credit](#credit)
+  - [Credits:](#credits)
 
 ---
 
@@ -126,65 +119,10 @@ _An initiative to bridge the educational gap_
 
 ---
 
-# BrainBridge Wireframe
-
-## Login Page
-
-- **Header**: BrainBridge Logo
-- **Main Content**:
-  - Email Input Field
-  - Password Input Field
-  - Login Button
-  - "Sign Up" link for new users
-- **Footer**: Contact Information, Links to Social Media
-
-## Sign Up Page
-
-- **Header**: BrainBridge Logo
-- **Main Content**:
-  - Name Input Field
-  - Email Input Field
-  - Password Input Field
-  - Confirm Password Input Field
-  - Sign Up Button
-  - "Login" link for existing users
-- **Footer**: Contact Information, Links to Social Media
-
-## Home Page
-
-- **Header**: BrainBridge Logo, Navigation Menu (Home, Study Session, Progress, Logout)
-- **Main Content**: Welcome Message, Brief Description, "Start Study Session" Button
-- **Footer**: Contact Information, Links to Social Media
-
-## Excerpt Input Page
-
-- **Header**: BrainBridge Logo, Navigation Menu (Home, Study Session, Progress, Logout)
-- **Main Content**:
-  - Text Area for Inputting Study Material (Data saved to database on submission)
-  - Submit Button to Generate Flashcards (Triggers backend processing and database update)
-- **Footer**: Contact Information, Links to Social Media
-
-## Study Session Page
-
-- **Header**: BrainBridge Logo, Navigation Menu (Home, Study Session, Progress, Logout)
-- **Main Content**:
-  - Flashcard Display (Front: Question, Back: Answer, Data loaded from database)
-  - Buttons for Answer Feedback (Updates flashcard status and scheduling in the database)
-  - Timer/Progress Bar
-- **Footer**: Contact Information, Links to Social Media
-
-## Progress Page
-
-- **Header**: BrainBridge Logo, Navigation Menu (Home, Study Session, Progress, Logout)
-- **Main Content**:
-  - Performance Graphs and Charts (Data loaded from database)
-  - Metrics Display (Study Time, Accuracy, Retention Rate, Card Maturity, Data loaded from database)
-- **Footer**: Contact Information, Links to Social Media
-
----
-
 ## Conclusion and Commitment to Education
 
 > With **BrainBridge**, we are not just building a study tool; we are nurturing a learning companion. This project is a heartfelt commitment to bridging the educational divide, ensuring that every student has the opportunity to thrive, regardless of their background
 
-## Credit
+## Credits:
+
+https://codepen.io/kathykato/pen/MqYVOq
