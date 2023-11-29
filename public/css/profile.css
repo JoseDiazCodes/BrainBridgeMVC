@@ -87,12 +87,12 @@ body {
 .user-photo {
 	width: 54px;
 	height: 54px;
-	border-radius: 10px;
+	border-radius: 50%;
 	-o-object-fit: cover;
 	object-fit: cover;
 	flex-shrink: 0;
-	margin-bottom: 20px;
 }
+
 .user-mail {
 	margin-top: 6px;
 	color: var(--theme-inactive-color);
@@ -421,4 +421,28 @@ input:checked + .slider:before {
 .light-mode .nav-item:hover {
 	color: black; /* Text color */
 	border-bottom: 1px solid black; /* Black bottom border for active and hover states */
+}
+
+#loading {
+	display: none;
+	font-size: 20px;
+	color: var(--theme-color);
+	text-align: center;
+	padding: 20px;
+}
+
+.content-submit {
+	width: 100%;
+	padding: 10px 20px;
+	background-color: #add8e6; /* Light blue */
+	color: #fff; /* White text */
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.content-submit:hover {
+	background-color: #87ceeb; /* Slightly darker blue on hover */
 }

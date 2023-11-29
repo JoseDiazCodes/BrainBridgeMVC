@@ -87,12 +87,12 @@ body {
 .user-photo {
 	width: 54px;
 	height: 54px;
-	border-radius: 10px;
+	border-radius: 50%;
 	-o-object-fit: cover;
 	object-fit: cover;
 	flex-shrink: 0;
-	margin-bottom: 20px;
 }
+
 .user-mail {
 	margin-top: 6px;
 	color: var(--theme-inactive-color);
@@ -541,4 +541,25 @@ input:checked + .slider:before {
 	font-size: 18px;
 	color: #333; /* Dark text color for minimalistic look */
 	margin-bottom: 20px; /* Add some space below the text */
+}
+
+.unanswered {
+	margin-bottom: 20px;
+	padding: 10px;
+	border: 1px solid #000;
+	background-color: rgb(
+		255,
+		255,
+		255
+	); /* White background for unanswered questions */
+	color: black;
+}
+
+.toggle-answer {
+	display: inline-block;
+	margin-top: 10px;
+	font-size: 16px;
+	color: #800080;
+	cursor: pointer;
+	transition: color 0.3s ease;
 }

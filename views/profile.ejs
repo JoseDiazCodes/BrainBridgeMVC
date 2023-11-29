@@ -13,11 +13,7 @@
 		<div class="app">
 			<div class="sidebar">
 				<div class="user">
-					<img
-						src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2360&q=80"
-						alt="user photo"
-						class="user-photo"
-					/>
+					<img src="/img/pfp.png" alt="user photo" class="user-photo" />
 					<div class="user-name">
 						<p><strong>User Name</strong>: <%= user.userName %></p>
 					</div>
@@ -30,7 +26,7 @@
 						>Create Your Questions</a
 					>
 					<a href="/dashboard/questions/" class="sidebar-menu__link"
-						>Questions</a
+						>Question Repository</a
 					>
 					<a href="/quiz/quiz" class="sidebar-menu__link">Quiz</a>
 				</div>
@@ -45,30 +41,32 @@
 					<div class="main-header__avatars"></div>
 				</div>
 				<div class="main-header-nav">
-					<!-- <a href="#" class="nav-item active">Questions</a> -->
-					<!-- <a href="#" class="nav-item">Quiz</a> -->
 					<a href="/logout" class="nav-item">Logout</a>
-					<!-- <a href="#" class="nav-item">Music</a>
-					<a href="#" class="nav-item">To-do list</a> -->
 				</div>
 				<div class="main-content">
 					<div class="main-content">
 						<div class="content-box">
-							<h2 class="content-heading">
-								Insert Your Text Here and Get Instant Spaced Repetition
-								Questions
-							</h2>
+							<h2>Generate Space Repetition Questions</h2>
+							<p>
+								How it works: Submit your text, ideally a paragraph and receive
+								AI-generated spaced repetition questions based on those
+								questions tailored to enhance your learning experience.
+							</p>
 							<form
 								action="/dashboard/generateQuestions/<%= user.id %>"
 								method="POST"
 								id="textForm"
 							>
 								<textarea
+									id="userText"
 									class="content-textarea"
 									placeholder="Type your text here..."
 									name="userText"
 								></textarea>
-								<button type="submit">Submit</button>
+								<button id="submit" class="content-submit" type="submit">
+									Submit
+								</button>
+								<div id="loading" style="display: none">Loading...</div>
 							</form>
 						</div>
 					</div>
@@ -78,7 +76,6 @@
 
 		<!-- partial -->
 		<script src="js/formValidation.js"></script>
-		<!-- <script src="js/logic.js"></script> -->
 		<script src="js/profile-script.js"></script>
 	</body>
 </html>

@@ -7,7 +7,8 @@ const QuestionAnswerSchema = mongoose.Schema({
 		{
 			question: String,
 			answer: String,
-			isCorrect: { type: Boolean, default: false },
+			isCorrect: { type: Boolean, default: null },
+			cooldown: Date, // Add this line to include a cooldown field
 		},
 	], // Array of question-answer pairs
 	// Whether the user got the question right

@@ -35,5 +35,3 @@ document.addEventListener("DOMContentLoaded", function () {
 		})
 	})
 })
-
-// Additional JavaScript functionalities can be added as needed

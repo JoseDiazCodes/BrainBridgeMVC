@@ -70,14 +70,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
 	}
 })
 
-function showAnswer(questionElement) {
-	// Find the answer element
-	var answerElement = questionElement.nextElementSibling
+function showAnswer(element) {
+	const answer = element.nextElementSibling
+	const instruction = answer.nextElementSibling
 
-	// Toggle the display of the answer element
-	if (answerElement.style.display === "none") {
-		answerElement.style.display = "block"
+	if (answer.style.display === "none") {
+		answer.style.display = "block"
+		instruction.style.display = "none"
 	} else {
-		answerElement.style.display = "none"
+		answer.style.display = "none"
+		instruction.style.display = "block"
 	}
 }

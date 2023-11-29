@@ -14,6 +14,7 @@
 		<div class="app">
 			<div class="sidebar">
 				<div class="user">
+					<img src="/img/pfp.png" alt="user photo" class="user-photo" />
 					<div class="user-name">
 						<p><strong>User Name</strong>: <%= user.userName %></p>
 					</div>
@@ -22,11 +23,11 @@
 					</div>
 				</div>
 				<div class="sidebar-menu">
-					<a href="/profile" class="sidebar-menu__link active"
+					<a href="/profile" class="sidebar-menu__link"
 						>Create Your Questions</a
 					>
-					<a href="/dashboard/questions" class="sidebar-menu__link">Questions</a>
-					<a href="/quiz/quiz" class="sidebar-menu__link">Quiz</a>
+					<a href="/dashboard/questions" class="sidebar-menu__link">Question Repository</a>
+					<a href="/quiz/quiz" class="sidebar-menu__link active">Quiz</a>
 				</div>
 				<label class="toggle">
 					<input type="checkbox" />
@@ -44,30 +45,38 @@
 				<div class="main-content">
 					<div class="main-content">
 						<div class="content-box">
-							<h2 class="content-heading">Quiz Generated:</h2>
+							<h2 class="content-heading">Generated Quiz:</h2>
 							<div id="quizContainer">
 								<ul class="questionsAnswers">
 									<div id="correctCount">
-										<p>Number of correct questions: <%= correctCount %> out of <%= totalCount %></p>
 									</div>
 									<% if (quiz.length > 0) { %>
-										<% questionAnswer.forEach(function(qa) { %>
+										<% questionAnswer.forEach(function(qa, qaIndex) { %>
 											<% qa.questionAnswer.forEach(function(quizItem, index) { %>
+												<% let correspondingQuizItem = quiz.find(item => item._id.toString() === quizItem._id.toString()); %>
 												<li>
 													<p onclick="showAnswer(this)" 
-													   class="<%= quizItem.isCorrect ? 'correct' : 'incorrect' %>">
-													   <strong>Question:</strong> <%= quizItem.question %>
+													class="<%= quizItem.isCorrect === null ? 'unanswered' : (quizItem.isCorrect ? 'correct' : 'incorrect') %>">
+													
+													<strong>Question:</strong> <%= quizItem.question %>
 													</p>
 													<p class="answer" style="display: none;">
 													   <strong>Answer:</strong> <%= quizItem.answer %>
+													</p>
+													<p class="instruction">Press on the Question to reveal the answer.</p>
+													<p class="remaining-cooldown-time">
+														Remaining cooldown time: <%= correspondingQuizItem ? correspondingQuizItem.remainingCooldown : '00:00:00' %>
 													</p>
 													<!-- Form for marking a question as correct -->
 													<div class="button-container">
 														<form method="POST" action="/quiz/markQuestionAsCorrect/<%= qa._id %>/<%= quizItem._id %>/?_method=PUT">
 															<input type="hidden" name="questionId" value="<%= quizItem._id %>">
-															<button class="button" type="submit">Correct</button>
+															<button class="button" type="submit" <%= Date.now() < quizItem.cooldown ? 'disabled' : '' %>>Correct</button>
 														</form>
-														<!-- Form for deleting a question -->
+														<form method="POST" action="/quiz/markQuestionAsIncorrect/<%= qa._id %>/<%= quizItem._id %>/?_method=PUT">
+															<input type="hidden" name="questionId" value="<%= quizItem._id %>">
+															<button class="button" type="submit" <%= Date.now() < quizItem.cooldown ? 'disabled' : '' %>>Incorrect</button>
+														</form>
 														<form method="POST" action="/quiz/deleteQuestion/<%= qa._id %>/<%= quizItem._id %>/?_method=DELETE">
 															<input type="hidden" name="questionId" value="<%= quizItem._id %>">
 															<button class ="button" type="submit">Delete</button>
@@ -90,7 +99,6 @@
 		</div>
 
 		<!-- partial -->
-		<!-- <script src="/js/logic.js"></script> -->
 		<script src="/js/profile-script.js"></script>
 	</body>
 </html>

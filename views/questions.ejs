@@ -13,6 +13,7 @@
 		<div class="app">
 			<div class="sidebar">
 				<div class="user">
+					<img src="/img/pfp.png" alt="user photo" class="user-photo" />
 					<div class="user-name">
 						<p><strong>User Name</strong>: <%= user.userName %></p>
 					</div>
@@ -21,11 +22,11 @@
 					</div>
 				</div>
 				<div class="sidebar-menu">
-					<a href="/profile" class="sidebar-menu__link active"
+					<a href="/profile" class="sidebar-menu__link"
 						>Create Your Questions</a
 					>
-					<a href="/dashboard/questions" class="sidebar-menu__link"
-						>Repository of All Questions</a
+					<a href="/dashboard/questions" class="sidebar-menu__link active"
+						>Question Repository</a
 					>
 
 					<a href="/quiz/quiz" class="sidebar-menu__link">Quiz</a>
@@ -47,20 +48,28 @@
 					<div class="main-content">
 						<div class="content-box">
 							<h2 class="content-heading">
-								List of All The Questions Generated Thus Far:
+								<h2>Questions Generated</h2>
+								<p>
+									This section displays all the questions generated with the
+									text input above them.
+								</p>
 							</h2>
 							<div id="questionsContainer">
 								<ul class="questionsAnswers">
-									<% questionAnswer.forEach(function(qa) { %>
+									<% questionAnswer.forEach(function(qa, index) { %> <%
+									if(qa.questionAnswer && qa.questionAnswer.length > 0) { %>
 									<li class="text-item">
 										<strong>Text:</strong> <%= qa.text %>
 									</li>
-									<% qa.questionAnswer.forEach(function(item) { %>
+									<% } %> <% qa.questionAnswer.forEach(function(item) { %>
 									<li class="qa-item">
-										<strong>Question:</strong> <%= item.question %>
-										<strong>Answer:</strong> <%= item.answer %>
+										<strong class="question">Question:</strong> <%=
+										item.question %> <strong class="answer">Answer:</strong> <%=
+										item.answer %>
 									</li>
-									<% }) %> <% }) %>
+									<% }) %> <% if(index < questionAnswer.length - 1) { %>
+									<hr />
+									<% } %> <% }) %>
 								</ul>
 							</div>
 						</div>
@@ -69,8 +78,6 @@
 			</div>
 		</div>
 
-		<!-- partial -->
-		<!-- <script src="/js/logic.js"></script> -->
 		<script src="/js/profile-script.js"></script>
 	</body>
 </html>

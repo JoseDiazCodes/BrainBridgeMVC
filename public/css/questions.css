@@ -87,12 +87,12 @@ body {
 .user-photo {
 	width: 54px;
 	height: 54px;
-	border-radius: 10px;
+	border-radius: 50%;
 	-o-object-fit: cover;
 	object-fit: cover;
 	flex-shrink: 0;
-	margin-bottom: 20px;
 }
+
 .user-mail {
 	margin-top: 6px;
 	color: var(--theme-inactive-color);
@@ -501,4 +501,16 @@ input:checked + .slider:before {
 :root {
 	/* Other dark mode styles... */
 	--alt-card-color: #383838; /* Dark gray for even list items */
+}
+
+.lightmode .text-item {
+	color: #add8e6; /* Light blue color for text */
+}
+
+.lightmode .question {
+	color: #87ceeb; /* Slightly darker blue color for questions */
+}
+
+.lightmode .answer {
+	color: #000000; /* Black color for answers */
 }

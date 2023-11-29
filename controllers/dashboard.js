@@ -43,26 +43,6 @@ module.exports = {
 		}
 	},
 
-	// getQuestions: async (req, res) => {
-	// 	try {
-	// 		if (!req.user) {
-	// 			return
-	// 		}
-	// 		const questionAnswer = await QuestionAnswer.find({
-	// 			// how can I find the questionAnswer by the user id?
-	// 			userId: req.user.id,
-	// 		}).lean()
-	// 		console.log("QnA:", questionAnswer)
-
-	// 		res.render("questions.ejs", {
-	// 			user: req.user,
-	// 			questionAnswer: questionAnswer,
-	// 		})
-	// 	} catch (err) {
-	// 		console.log(err)
-	// 	}
-	// },
-
 	generateQuestions: async (req, res) => {
 		try {
 			const { userText } = req.body // Access the text from the request body
@@ -113,8 +93,5 @@ module.exports = {
 		console.log(JSON.stringify(QuestionAnswer, null, 2))
 	},
 
-	deleteQuestions: (req, res) => {
-		// Logic for deleting questions
-		// access the user ID with req.params.id
-	},
+	deleteQuestions: (req, res) => {},
 }

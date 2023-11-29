@@ -188,5 +188,3 @@ _An initiative to bridge the educational gap_
 > With **BrainBridge**, we are not just building a study tool; we are nurturing a learning companion. This project is a heartfelt commitment to bridging the educational divide, ensuring that every student has the opportunity to thrive, regardless of their background
 
 ## Credit
-
-Modified from Scotch.io's auth tutorial
