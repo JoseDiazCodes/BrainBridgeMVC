@@ -7,7 +7,7 @@
 
 **"Master the Art of Learning" | "Swift, Smart, Study" | "Unleash Your Brain’s Potential"**
 
-<img src="../BB/BrainBridge@2x.png">
+![BrainBridge](BrainBridge@2x.png)
 
 > BrainBridge embodies the spirit of a true learning master. Like a ninja, you will become highly trained, agile, and equipped with a variety of skills to navigate through your educational journey.
 >
